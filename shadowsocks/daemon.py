@@ -1,19 +1,7 @@
-#!/usr/bin/python
+
 # -*- coding: utf-8 -*-
-#
-# Copyright 2014-2015 clowwindy
-#
-# Licensed under the Apache License, Version 2.0 (the "License"); you may
-# not use this file except in compliance with the License. You may obtain
-# a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
-# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
-# License for the specific language governing permissions and limitations
-# under the License.
+
+
 
 from __future__ import absolute_import, division, print_function, \
     with_statement
@@ -26,7 +14,7 @@ import time
 from shadowsocks import common, shell
 
 # this module is ported from ShadowVPN daemon.c
-# ÒÔÊØ»¤½ø³Ì·½Ê½ÔËÐÐ£¬´úÂëÄ£¿é»¯£¬¿ÉÒÔÖ±½ÓÄÃ×ßÈ¥ÓÃ
+# ï¿½ï¿½ï¿½Ø»ï¿½ï¿½ï¿½ï¿½Ì·ï¿½Ê½ï¿½ï¿½ï¿½Ð£ï¿½ï¿½ï¿½ï¿½ï¿½Ä£ï¿½é»¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¥ï¿½ï¿½
 
 def daemon_exec(config):
     if 'daemon' in config:
