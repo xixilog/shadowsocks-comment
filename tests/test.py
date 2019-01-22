@@ -1,22 +1,5 @@
-
+import os, sys
 # -*- coding: utf-8 -*-
-#
-# Copyright 2015 clowwindy
-#
-
-
-
-#
-
-#
-
-
-
-
-
-
-from __future__ import absolute_import, division, print_function, \
-    with_statement
 
 import sys
 import os
@@ -46,8 +29,8 @@ config = parser.parse_args()
 if config.with_coverage:
     python = ['coverage', 'run', '-a']
 
-client_args = python + ['shadowsocks/local.py', '-v']
-server_args = python + ['shadowsocks/server.py', '-v']
+client_args = python + ['../shadowsocks/local.py', '-v']
+server_args = python + ['../shadowsocks/server.py', '-v']
 
 if config.client_conf:
     client_args.extend(['-c', config.client_conf])
@@ -106,7 +89,7 @@ try:
             time.sleep(2)
 
             p3 = Popen(['curl', config.url, '-v', '-L',
-                        '--socks5-hostname', '127.0.0.1:1081',
+                        '--socks5-hostname', '127.0.0.1:1080',
                         '-m', '15', '--connect-timeout', '10'],
                        stdin=PIPE, stdout=PIPE, stderr=PIPE, close_fds=True)
             if p3 is not None:
