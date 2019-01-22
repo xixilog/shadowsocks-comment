@@ -1,17 +1,12 @@
 
 # -*- coding: utf-8 -*-
 
-
-
-from __future__ import absolute_import, division, print_function, \
-    with_statement
-
 import os
 import sys
 import logging
 import signal
 import time
-from shadowsocks import common, shell
+import common, shell
 
 # this module is ported from ShadowVPN daemon.c
 # ���ػ����̷�ʽ���У�����ģ�黯������ֱ������ȥ��

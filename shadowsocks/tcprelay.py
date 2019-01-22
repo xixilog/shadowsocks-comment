@@ -4,9 +4,6 @@
 
 
 
-from __future__ import absolute_import, division, print_function, \
-    with_statement
-
 import time
 import socket
 import errno
@@ -15,8 +12,8 @@ import logging
 import traceback
 import random
 
-from shadowsocks import encrypt, eventloop, shell, common
-from shadowsocks.common import parse_header, onetimeauth_verify, \
+import encrypt, eventloop, shell, common
+from common import parse_header, onetimeauth_verify, \
     onetimeauth_gen, ONETIMEAUTH_BYTES, ONETIMEAUTH_CHUNK_BYTES, \
     ONETIMEAUTH_CHUNK_DATA_LEN, ADDRTYPE_AUTH
 

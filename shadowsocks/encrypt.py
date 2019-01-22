@@ -3,16 +3,13 @@
 
 
 
-from __future__ import absolute_import, division, print_function, \
-    with_statement
-
 import os
 import sys
 import hashlib
 import logging
 
-from shadowsocks import common
-from shadowsocks.crypto import rc4_md5, openssl, sodium, table
+import common
+from crypto import rc4_md5, openssl, sodium, table
 
 
 method_supported = {}

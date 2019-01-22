@@ -49,17 +49,14 @@
 # `client`  means UDP clients that connects to other servers
 # `server`  means the UDP server that handles user requests
 
-from __future__ import absolute_import, division, print_function, \
-    with_statement
-
 import socket
 import logging
 import struct
 import errno
 import random
 
-from shadowsocks import encrypt, eventloop, lru_cache, common, shell
-from shadowsocks.common import parse_header, pack_addr, onetimeauth_verify, \
+import encrypt, eventloop, lru_cache, common, shell
+from common import parse_header, pack_addr, onetimeauth_verify, \
     onetimeauth_gen, ONETIMEAUTH_BYTES, ADDRTYPE_AUTH
 
 

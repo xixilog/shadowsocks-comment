@@ -4,9 +4,6 @@
 # from ssloop
 
 
-from __future__ import absolute_import, division, print_function, \
-    with_statement
-
 import os
 import time
 import socket
@@ -15,7 +12,7 @@ import errno
 import logging
 from collections import defaultdict
 
-from shadowsocks import shell
+import shell
 
 # 事件循环，没什么好解释的，和libevent同一套东西
 # 接口包装，select和epoll两套统一接口

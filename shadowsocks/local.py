@@ -2,9 +2,7 @@
 # -*- coding: utf-8 -*-
 
 
-from shadowsocks import shell, daemon, eventloop, tcprelay, udprelay, asyncdns
-from __future__ import absolute_import, division, print_function, \
-    with_statement
+import shell, daemon, eventloop, tcprelay, udprelay, asyncdns
 
 import sys
 import os

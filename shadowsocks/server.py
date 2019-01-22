@@ -3,16 +3,13 @@
 
 
 
-from __future__ import absolute_import, division, print_function, \
-    with_statement
-
 import sys
 import os
 import logging
 import signal
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '../'))
-from shadowsocks import shell, daemon, eventloop, tcprelay, udprelay, \
+import shell, daemon, eventloop, tcprelay, udprelay, \
     asyncdns, manager
 
 

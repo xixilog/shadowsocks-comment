@@ -2,10 +2,6 @@
 # -*- coding: utf-8 -*-
 
 
-
-from __future__ import absolute_import, division, print_function, \
-    with_statement
-
 import errno
 import traceback
 import socket
@@ -13,7 +9,7 @@ import logging
 import json
 import collections
 
-from shadowsocks import common, eventloop, tcprelay, udprelay, asyncdns, shell
+import common, eventloop, tcprelay, udprelay, asyncdns, shell
 
 
 BUF_SIZE = 1506
@@ -186,7 +182,7 @@ def test():
     import time
     import threading
     import struct
-    from shadowsocks import encrypt
+    import encrypt
 
     logging.basicConfig(level=5,
                         format='%(asctime)s %(levelname)-8s %(message)s',

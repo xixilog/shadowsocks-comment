@@ -2,18 +2,13 @@
 # -*- coding: utf-8 -*-
 
 
-
-
-from __future__ import absolute_import, division, print_function, \
-    with_statement
-
 import os
 import json
 import sys
 import getopt
 import logging
-from shadowsocks.common import to_bytes, to_str, IPNetwork
-from shadowsocks import encrypt
+from common import to_bytes, to_str, IPNetwork
+import encrypt
 
 
 VERBOSE_LEVEL = 5
