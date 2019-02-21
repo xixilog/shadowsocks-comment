@@ -1,7 +1,5 @@
-import os, sys
-# -*- coding: utf-8 -*-
-
-
+import os
+import sys
 import errno
 import traceback
 import socket
@@ -9,7 +7,12 @@ import logging
 import json
 import collections
 
-import common, eventloop, tcprelay, udprelay, asyncdns, shell
+import common
+import eventloop
+import tcprelay
+import udprelay
+import asyncdns
+import shell
 
 
 BUF_SIZE = 1506
@@ -231,7 +234,7 @@ def test():
     logging.info('add and remove test passed')
 
     # test statistics for TCP
-    header = common.pack_addr(b'google.com') + struct.pack('>H', 80)
+    header = common.pack_addr(b'shadowsocks.com') + struct.pack('>H', 80)
     data = encrypt.encrypt_all(b'asdfadsfasdf', 'aes-256-cfb', 1,
                                header + b'GET /\r\n\r\n')
     tcp_cli = socket.socket()

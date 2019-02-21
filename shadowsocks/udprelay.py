@@ -1,8 +1,5 @@
-import os, sys
-# -*- coding: utf-8 -*-
-
-
-
+import os
+import sys
 
 
 # SOCKS5 UDP Request
@@ -55,7 +52,11 @@ import struct
 import errno
 import random
 
-import encrypt, eventloop, lru_cache, common, shell
+import encrypt
+import eventloop
+import lru_cache
+import common
+import shell
 from common import parse_header, pack_addr, onetimeauth_verify, \
     onetimeauth_gen, ONETIMEAUTH_BYTES, ADDRTYPE_AUTH
 
@@ -68,6 +69,8 @@ def client_key(source_addr, server_af):
     return '%s:%s:%d' % (source_addr[0], source_addr[1], server_af)
 
 # 这里的UDPRelay只负责转发udp数据包，丢包检测由两端应用负责
+
+
 class UDPRelay(object):
     def __init__(self, config, dns_resolver, is_local, stat_callback=None):
         self._config = config

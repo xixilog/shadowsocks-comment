@@ -1,4 +1,5 @@
-import os, sys
+import os
+import sys
 
 from ctypes import c_char_p, c_int, c_ulonglong, byref, \
     create_string_buffer, c_void_p

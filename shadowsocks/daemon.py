@@ -1,15 +1,14 @@
-import os, sys
-# -*- coding: utf-8 -*-
-
 import os
 import sys
 import logging
 import signal
 import time
-import common, shell
+import common
+import shell
 
 # this module is ported from ShadowVPN daemon.c
 # ���ػ����̷�ʽ���У�����ģ�黯������ֱ������ȥ��
+
 
 def daemon_exec(config):
     if 'daemon' in config:

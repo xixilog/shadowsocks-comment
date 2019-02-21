@@ -1,4 +1,5 @@
-import os, sys
+import os
+import sys
 # -*- coding: utf-8 -*-
 
 
@@ -36,6 +37,7 @@ def compat_chr(d):
     if bytes == str:
         return _chr(d)
     return bytes([d])
+
 
 # ord 将ascii转为整数  chr将整数转为ascii
 # 打补丁后ord既可接收整数也可以接收字符，chr
@@ -166,8 +168,8 @@ def parse_header(data):
             addrlen = ord(data[1])
             if len(data) >= 4 + addrlen:
                 dest_addr = data[2:2 + addrlen]
-                dest_port = struct.unpack('>H', data[2 + addrlen:4 +
-                                                     addrlen])[0]
+                dest_port = struct.unpack('>H', data[2 + addrlen:4
+                                                     + addrlen])[0]
                 header_length = 4 + addrlen
             else:
                 logging.warn('header is too short')

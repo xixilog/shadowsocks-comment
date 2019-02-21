@@ -1,10 +1,5 @@
-import os, sys
-# -*- coding: utf-8 -*-
-
-
-
-
-
+import os
+import sys
 import collections
 import logging
 import time
@@ -140,6 +135,7 @@ def test():
     c['s']
     time.sleep(0.3)
     c.sweep()
+
 
 if __name__ == '__main__':
     test()

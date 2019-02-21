@@ -1,8 +1,11 @@
-import os, sys
-# -*- coding: utf-8 -*-
-
-
-import shell, daemon, eventloop, tcprelay, udprelay, asyncdns
+import os
+import sys
+import shell
+import daemon
+import eventloop
+import tcprelay
+import udprelay
+import asyncdns
 
 import sys
 import os

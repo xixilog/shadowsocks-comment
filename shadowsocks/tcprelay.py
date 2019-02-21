@@ -1,9 +1,5 @@
-import os, sys
-# -*- coding: utf-8 -*-
-
-
-
-
+import os
+import sys
 import time
 import socket
 import errno
@@ -12,7 +8,10 @@ import logging
 import traceback
 import random
 
-import encrypt, eventloop, shell, common
+import encrypt
+import eventloop
+import shell
+import common
 from common import parse_header, onetimeauth_verify, \
     onetimeauth_gen, ONETIMEAUTH_BYTES, ONETIMEAUTH_CHUNK_BYTES, \
     ONETIMEAUTH_CHUNK_DATA_LEN, ADDRTYPE_AUTH
@@ -131,13 +130,13 @@ class TCPRelayHandler(object):
             self._forbidden_iplist = None
         if is_local:
             self._chosen_server = self._get_a_server()
-        fd_to_handlers[local_sock.fileno()] = self	# 注册socket
+        fd_to_handlers[local_sock.fileno()] = self  # 注册socket
         local_sock.setblocking(False)
         local_sock.setsockopt(socket.SOL_TCP, socket.TCP_NODELAY, 1)
         # 添加到事件循环loop
         loop.add(local_sock, eventloop.POLL_IN | eventloop.POLL_ERR,
                  self._server)
-        self.last_activity = 0 # 上一次活动的时间
+        self.last_activity = 0  # 上一次活动的时间
         # 下面的函数就是更新这个变量
         self._update_activity()
 
@@ -554,8 +553,8 @@ class TCPRelayHandler(object):
         socks_version = common.ord(data[0])
         nmethods = common.ord(data[1])
         if socks_version != 5:
-            logging.warning('unsupported SOCKS protocol version ' +
-                            str(socks_version))
+            logging.warning('unsupported SOCKS protocol version '
+                            + str(socks_version))
             raise BadSocksHeader
         if nmethods < 1 or len(data) != nmethods + 2:
             logging.warning('NMETHODS and number of METHODS mismatch')
@@ -864,11 +863,11 @@ class TCPRelay(object):
             logging.log(shell.VERBOSE_LEVEL, 'sweeping timeouts')
             now = time.time()
             length = len(self._timeouts)
-            pos = self._timeout_offset # _timeout_offset之前的链表节点都是None
+            pos = self._timeout_offset  # _timeout_offset之前的链表节点都是None
             while pos < length:
                 handler = self._timeouts[pos]
                 if handler:
-                # 找到第一个未超时的，说明后面的也是未超时，直接跳出
+                    # 找到第一个未超时的，说明后面的也是未超时，直接跳出
                     if now - handler.last_activity < self._timeout:
                         break
                     else:

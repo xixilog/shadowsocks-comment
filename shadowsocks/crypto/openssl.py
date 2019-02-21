@@ -1,4 +1,5 @@
-import os, sys
+import os
+import sys
 
 from ctypes import c_char_p, c_int, c_long, byref,\
     create_string_buffer, c_void_p
@@ -10,7 +11,6 @@ __all__ = ['ciphers']
 
 libcrypto = None
 loaded = False
-
 buf_size = 2048
 
 
@@ -32,7 +32,7 @@ def load_openssl():
     libcrypto.EVP_CipherUpdate.argtypes = (c_void_p, c_void_p, c_void_p,
                                            c_char_p, c_int)
 
-    libcrypto.EVP_CIPHER_CTX_cleanup.argtypes = (c_void_p,)
+    libcrypto.EVP_CIPHER_CTX_reset.argtypes = (c_void_p,)
     libcrypto.EVP_CIPHER_CTX_free.argtypes = (c_void_p,)
     if hasattr(libcrypto, 'OpenSSL_add_all_ciphers'):
         libcrypto.OpenSSL_add_all_ciphers()
@@ -51,9 +51,10 @@ def load_cipher(cipher_name):
         return cipher()
     return None
 
+
 class OpenSSLCrypto(object):
     def __init__(self, cipher_name, key, iv, op):
-		# 根据op字段决定自己是加密还是解密，只能其一
+                # 根据op字段决定自己是加密还是解密，只能其一
         self._ctx = None
         if not loaded:
             load_openssl()
@@ -92,7 +93,7 @@ class OpenSSLCrypto(object):
 
     def clean(self):
         if self._ctx:
-            libcrypto.EVP_CIPHER_CTX_cleanup(self._ctx)
+            libcrypto.EVP_CIPHER_CTX_reset(self._ctx)
             libcrypto.EVP_CIPHER_CTX_free(self._ctx)
 
 

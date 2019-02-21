@@ -18,6 +18,7 @@ VALID_HOSTNAME = re.compile(br"(?!-)[A-Z\d-]{1,63}(?<!-)$", re.IGNORECASE)
 common.patch_socket()
 
 # rfc1035
+
 # format
 # +---------------------+
 # |        Header       |
@@ -469,17 +470,6 @@ def test():
     dns_resolver.resolve('ipv6.google.com', make_callback())
     dns_resolver.resolve('www.facebook.com', make_callback())
     dns_resolver.resolve('ns2.google.com', make_callback())
-    dns_resolver.resolve('invalid.@!#$%^&$@.hostname', make_callback())
-    dns_resolver.resolve('toooooooooooooooooooooooooooooooooooooooooooooooooo'
-                         'ooooooooooooooooooooooooooooooooooooooooooooooooooo'
-                         'long.hostname', make_callback())
-    dns_resolver.resolve('toooooooooooooooooooooooooooooooooooooooooooooooooo'
-                         'ooooooooooooooooooooooooooooooooooooooooooooooooooo'
-                         'ooooooooooooooooooooooooooooooooooooooooooooooooooo'
-                         'ooooooooooooooooooooooooooooooooooooooooooooooooooo'
-                         'ooooooooooooooooooooooooooooooooooooooooooooooooooo'
-                         'ooooooooooooooooooooooooooooooooooooooooooooooooooo'
-                         'long.hostname', make_callback())
 
     loop.run()
 

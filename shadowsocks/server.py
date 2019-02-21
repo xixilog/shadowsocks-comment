@@ -1,16 +1,16 @@
-import os, sys
-# -*- coding: utf-8 -*-
-
-
-
-import sys
 import os
+import sys
+import asyncdns
+import manager
+import udprelay
+import tcprelay
+import eventloop
+import daemon
+import shell
 import logging
 import signal
 
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '../'))
-import shell, daemon, eventloop, tcprelay, udprelay, \
-    asyncdns, manager
+#sys.path.insert(0, os.path.join(os.path.dirname(__file__), '../'))
 
 
 def main():
@@ -101,7 +101,7 @@ def main():
                     run_server()
                     break
                 else:
-                    children.append(r) # 添加到父进程
+                    children.append(r)  # 添加到父进程
             if not is_child:
                 # 父进程跑下来
                 def handler(signum, _):
@@ -130,7 +130,7 @@ def main():
             logging.warn('worker is only available on Unix/Linux')
             run_server()
     else:
-        run_server() # 单进程跑
+        run_server()  # 单进程跑
 
 
 if __name__ == '__main__':

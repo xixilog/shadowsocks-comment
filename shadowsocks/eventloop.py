@@ -1,10 +1,7 @@
-import os, sys
-# -*- coding: utf-8 -*-
-
 # from ssloop
 
-
 import os
+import sys
 import time
 import socket
 import select

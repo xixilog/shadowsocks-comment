@@ -1,6 +1,6 @@
-import os, sys
-
 import os
+import sys
+
 import logging
 
 
