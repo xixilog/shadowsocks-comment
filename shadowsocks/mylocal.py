@@ -13,6 +13,8 @@ import logging
 import signal
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '../'))
+#logging.basicConfig(filename='output.log', level=logging.INFO)
+logging.basicConfig(level=logging.INFO)
 
 
 shell.check_python()
@@ -37,7 +39,7 @@ config = {'server': 'pynalysi.xyz',
           'pid-file': '/var/run/shadowsocks.pid',
           'log-file': '/var/log/shadowsocks.log',
           'verbose': False,
-          'local_address': '192.168.3.161',
+          'local_address': '0.0.0.0',
           'local_port': 1081,
           'one_time_auth': False,
           'prefer_ipv6': False,
