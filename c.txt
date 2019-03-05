@@ -1,0 +1,24 @@
+apt install apt-transport-https ca-certificates curl gnupg-agent software-properties-common
+
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+
+
+add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+
+
+
+apt update
+
+apt install docker-ce docker-ce-cli containerd.io
+
+
+
+
+
+docker run -d --name v2ray -v /etc/v2ray:/etc/v2ray -p 8081:8081 v2ray/official v2ray -config=/etc/v2ray/config.json
+
+
+
+bash <(curl -L -s https://install.direct/go.sh) -p socks5://192.168.5.104:1080

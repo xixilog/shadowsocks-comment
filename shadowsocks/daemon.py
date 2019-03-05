@@ -7,7 +7,6 @@ import common
 import shell
 
 # this module is ported from ShadowVPN daemon.c
-# ���ػ����̷�ʽ���У�����ģ�黯������ֱ������ȥ��
 
 
 def daemon_exec(config):
