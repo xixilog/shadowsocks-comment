@@ -1,5 +1,5 @@
-import os
-import sys
+# -*- coding: utf-8 -*-
+
 import shell
 import daemon
 import eventloop

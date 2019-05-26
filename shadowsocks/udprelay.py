@@ -1,5 +1,5 @@
-import os
-import sys
+# -*- coding: utf-8 -*-
+
 
 
 # SOCKS5 UDP Request
